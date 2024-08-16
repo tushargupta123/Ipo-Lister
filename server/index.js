@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
+const cors = require('cors');
 
 const userRoutes = require('./routes/user');
 const ipoRoutes = require('./routes/ipo');
@@ -22,6 +23,7 @@ const db = async () => {
 }
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/user',userRoutes);
 app.use('/api/ipo',isAuth,ipoRoutes);

@@ -7,6 +7,6 @@ router.post('/',isAdmin,createIpo)
 router.patch('/',isAdmin,updateIpo)
 router.get('/',getAllIpo)
 router.get('/:id',getIpo)
-router.delete('/',isAdmin,deleteIpo)
+router.delete('/:id',isAdmin,deleteIpo)
 
 module.exports = router;

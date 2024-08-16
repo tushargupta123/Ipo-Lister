@@ -1,0 +1,30 @@
+body{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  background: #1c1f22;
+}
+
+.add_button{
+  font-size:large;
+  padding: 0px 10px 0px 10px;
+}
+
+.input_shares{
+  background: transparent;
+  padding: 1px;
+  border: 0.5px solid rgb(214, 194, 194);
+  color: aliceblue!important;
+}
+
+.input_shares:disabled{
+  background: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  background-color: inherit!important;
+  border-color: inherit!important;
+  color: aliceblue;
+}
+
+.create_account{
+  cursor: pointer;
+}

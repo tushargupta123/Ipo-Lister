@@ -37,7 +37,11 @@ const login = async (req, res) => {
         if(!isValid){
             return res.status(401).json({message:"Invalid credentials"});
         }
-        return res.status(200).json({"token":getToken(user)});
+        const message = {
+            "token":getToken(user),
+            "isAdmin":user.isAdmin
+        }
+        return res.status(200).json(message);
     }catch(err){
         console.log(err);
         return res.status(500).json(err);

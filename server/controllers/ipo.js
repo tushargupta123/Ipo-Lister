@@ -49,11 +49,7 @@ const getAllIpo = async(req,res) => {
 }
 const deleteIpo = async(req,res) => {
     try{
-        let ipo = await Ipo.findById(req.body.id);
-        if(ipo.startDate <= Date.now()){
-            return res.status(500).json({message: 'Ipo cannot be deleted after arrival'})
-        }
-        await Ipo.findByIdAndDelete(req.body.id);
+        await Ipo.findByIdAndDelete(req.params.id);
         return res.status(200).json({message:"Ipo deleted successfully!"});
     }catch(err){
         console.log(err);
