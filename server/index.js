@@ -12,15 +12,12 @@ const isAuth = require('./middlewares/auth');
 
 const {allocate} = require('./allocate')
 
-const db = async () => {
-    try {
-        const mongodb = process.env.mongodb;
-        await mongoose.connect(mongodb);
-        console.log("Connected to MongoDB");
-    } catch (e) {
-        console.log("Error while connecting to db: ", e);
-    }
+const db = process.env.mongodb;
+
+async function main() {
+    await mongoose.connect(db);
 }
+main().catch((err) => console.log(err));
 
 app.use(express.json());
 app.use(cors());
@@ -33,8 +30,7 @@ app.get('/',(req, res) => {
     return res.json({message : "Api is working"})
 })
 
-app.listen(8000, async () => {
+app.listen(8000, () => {
     console.log("Server is running on port 8000");
-    await db();
-    await allocate.start();
+    allocate.start();
 })
