@@ -1,6 +1,10 @@
 # Ipo Lister Project
 Welcome to the Ipo Lister Project! This project is built using the MERN stack, incorporating additional technologies such as JWT, Stripe, Cron-job, nodemailer and Bootstrap for styling.
 
+# Credentials (to use admin access)
+email - admin@gmail.com
+password - 123
+
 ## Introduction
 Ipo Lister is a project which shows the open , upcoming and listed ipo's and allow users to apply for ipo and allocate ipo's randomly. It includes admin features to create , update and delete any upcoming ipo.
 
