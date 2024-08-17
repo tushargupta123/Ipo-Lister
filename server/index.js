@@ -15,7 +15,7 @@ const {allocate} = require('./allocate')
 const db = process.env.mongodb;
 
 async function main() {
-    await mongoose.connect(db);
+    await mongoose.connect("mongodb+srv://tushargupta2k3:tUshar%40123@twitter.fzbvq5v.mongodb.net/ipo");
 }
 main().catch((err) => console.log(err));
 
